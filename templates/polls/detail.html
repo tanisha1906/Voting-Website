@@ -1,0 +1,32 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls.css' %}">
+{% include "pages/navbar.html" %}
+<form action="{% url 'votingpolls:vote' question.id %}" method="post">
+    {% csrf_token %}
+    <br>
+    <h1 style="text-align: center;">Vote attentively!</h1><br>
+    <fieldset style="align-items: center;">
+        <legend style="text-align: center;"><h1>{{question.question_text}}</h1></legend><br>
+        {% if error_message %}
+            <p style="text-align: center; color: red; font-weight: bold;"><strong>{{error_message}}</strong></p>
+        {%endif%}<br>
+        <div style="text-align: center;">
+            {% if user_vote %}
+            <p style="text-align: center; color: green; font-weight: bold;">You have already voted !</p>
+            {% else %}
+            {% for choice in question.choice_set.all %}
+            <div style="display: inline-block; margin: 0 10px;">
+                <input type="checkbox" name="choice" class="form-check-input" id="choice{{ forloop.counter }}"value="{{ choice.id }}"  style="display:block; margin: 0 auto;"/>
+                <label for="choice{{ forloop.counter }}" style="display: block; text-align: center;">{{ choice.choice_text }}</label>
+            </div>
+            {% endfor %}
+            {% endif %}
+</div>
+</fieldset>
+<br>
+<div style="text-align: center;">
+    {% if not user_vote %}
+    <input type="submit" value="Vote" class="option" />
+    {% endif %}
+</div>
+</form>

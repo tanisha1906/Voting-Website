@@ -1,0 +1,253 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'website.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+  {% include "pages/navbar.html" %}
+    <div id="home" class="container-fluid fill dark-gray-background">
+      <h1 class="center text-center">
+        <p>"Voice Your Choice: Empowering Your Vote, Shaping Our Future!" </p>
+      </h1>
+    </div>
+  </div>
+
+  <div id="about" class="container-fluid">
+    <h2 class="text-uppercase dark-gray-font">About Us</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-sm-12">
+          <p class="dark-gray-font text-justify">
+            "Elections represent the cornerstone of democracy, providing citizens with the opportunity to exercise their right to vote and choose representatives who will govern on their behalf. Through elections, individuals contribute to the shaping of policies, laws, and the overall trajectory of their society. This participatory process fosters accountability, transparency, and civic engagement, reinforcing the democratic principles of equality, freedom, and justice."
+          </p>
+          <p class="dark-gray-font text-justify">
+            In India, elections unfold against a backdrop of diversity, complexity, and vibrancy. From bustling urban centers to remote rural villages, the electoral landscape is characterized by a rich tapestry of cultures, languages, and traditions.
+          </p>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <p class="dark-gray-font text-justify">
+            Political campaigns energize the nation, as candidates traverse vast distances, addressing diverse constituencies and engaging in spirited debates. Despite challenges such as logistical hurdles and occasional instances of malpractice, Indian elections exemplify the resilience of democracy, with millions of voters exercising their franchise to shape the country's destiny.</p>
+          <p class="dark-gray-font text-justify">
+            In the run-up to elections, the political atmosphere in India becomes charged with anticipation and fervor, as parties vie for power and voters weigh their options. Campaign rallies, public speeches, and media coverage amplify the democratic discourse, fostering a sense of civic duty and political awareness among the populace.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="projects" class="container-fluid light-white-font">
+    <h2 class="text-uppercase dark-gray-font">NEWS UPDATES</h2>
+    <div class="container dark-gray-font">
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="panel panel-default fixed-width center-block">
+            <div class="panel-body">
+              <a href="https://tmp.eci.gov.in/electoral-roll" target="Electoral Fraud">
+                <img class="img-responsive center-block" src="{% static 'img/img1.jpg' %}" />
+              </a>
+            </div>
+            <div class="panel-footer">
+              <h3>Electoral Fraud</h3>
+              <p> Concerns about electoral fraud, including vote rigging, booth capturing, and tampering with electronic voting machines (EVMs), have been reported in past elections.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default fixed-width center-block">
+            <div class="panel-body">
+              <a href="https://electoralsearch.eci.gov.in/" target="coderbits">
+                <img class="img-responsive center-block" src="{% static 'img/img2.jpg' %}" />
+              </a>             
+            </div>
+            <div class="panel-footer">
+              <h3>Voter Suppression: </h3>
+              <p> Instances of voter suppression, such as intimidation of voters, coercion, and disenfranchisement, have been reported in some areas, particularly those affected by political violence or communal tensions.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default fixed-width center-block">
+            <div class="panel-body">
+              <a href="https://www.hindustantimes.com/india-news/extortion-scheme-biggest-scam-oppn-slams-pm-modis-electoral-bonds-defence-101713189317079.html" target="file-appender">
+                <img class="img-responsive center-block" src="{% static 'img/img3.jpg' %}" />
+              </a>
+            </div>
+            <div class="panel-footer">
+              <h3>Money Power</h3>
+              <p>The influence of money in elections, including the use of illegal funds for campaigning, buying votes, and influencing political outcomes, remains a significant concern.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="panel panel-default fixed-width center-block">
+            <div class="panel-body">
+              <a href="https://www.researchgate.net/publication/333719218_Electoral_Violence_Threats_and_Security_Problems_and_Prospects_for_Indian_Democracy" target="objectiveng">
+                <img class="img-responsive center-block" src="{% static 'img/img4.jpg' %}" />
+              </a>
+            </div>
+            <div class="panel-footer">
+              <h3>Political Violence</h3>
+              <p> Incidents of political violence, clashes between rival party supporters, and intimidation of candidates have been reported in some regions, particularly during the election campaign period.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="panel panel-default fixed-width center-block">
+            <div class="panel-body">
+              <a href="https://www.reuters.com/world/india/indias-lok-sabha-election-2024-main-political-parties-candidates-2024-04-16/" target="randomquotegen">
+                <img class="img-responsive center-block" src="{% static 'img/img5.jpg' %}" />
+              </a>
+            </div>
+            <div class="panel-footer">
+              <h3>Identity Politics</h3>
+              <p> The use of identity-based politics, including religious, caste, and regional considerations, to polarize voters and consolidate electoral support remains a contentious issue in Indian elections.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="panel panel-default fixed-width center-block">
+            <div class="panel-body">
+              <a href="https://www.reuters.com/world/india/indias-lok-sabha-election-2024-main-political-parties-candidates-2024-04-16/" target="coderbits">
+                <img class="img-responsive center-block" src="{% static 'img/img6.jpg' %}" />
+              </a>              </div>
+            <div class="panel-footer">
+              <h3>Misinformation</h3>
+              <p> "False information on social media distorts voter views, erodes trust, and undermines election fairness, threatening overall electoral integrity."</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="container-fluid">
+    <h2 class="text-uppercase dark-gray-font">Current Issues</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 col-md-offset-1 col-sm-12">
+          <p class="dark-gray-font text-justify">
+            <strong>COVID-19 Pandemic:</strong> India continues to battle the COVID-19 pandemic, focusing on vaccination drives, managing healthcare resources, and balancing public health measures with economic activities.<br>
+            <strong>Economic Challenges:</strong> India faces economic challenges, including high inflation rates, unemployment, and the impact of the pandemic on various sectors such as tourism, hospitality, and small businesses.<br>
+            <strong>Farmers' Protests:</strong> Farmers' protests against new agricultural laws have been ongoing, with farmers demanding the repeal of the laws and assurance of minimum support prices (MSP) for their produce.<br>
+          </p>
+        </div>
+        <div class="col-md-5 col-sm-12">
+          <p class="dark-gray-font text-justify">
+            <strong>Political Landscape:</strong> The political landscape in India remains dynamic, with state elections, coalition politics, and debates on issues such as secularism, federalism, and governance dominating public discourse.<br>
+            <strong>Environmental Concerns:</strong> India grapples with environmental challenges, including air and water pollution, deforestation, and climate change impacts. Efforts to address these issues include renewable energy initiatives, pollution control measures, and conservation efforts.<br>
+            <strong>Social Issues:</strong> Social issues like caste discrimination, gender inequality, and limited access to education and healthcare persist in India despite efforts to address them through policy and grassroots initiatives.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="aboutstep" class="container-fluid">
+    <h2 class="text-uppercase dark-gray-font">Steps to Vote</h2>
+    <div class="container">
+      <div class="row">
+          <p class="dark-gray-font text-justify">
+            1.Register Online:Visit the official election website to register as an online voter. Follow the provided instructions to enter your details and verify your identity.<br>
+            2.Login on Voting Day:On the election day, log in to the online voting platform using your registered credentials.<br>
+            3.Access Your Ballot: Once logged in, access your electronic ballot. Review the list of candidates or options available for voting.<br>
+            4.Make Your Selections: Choose your preferred candidate or option by clicking or tapping on the corresponding button or checkbox.<br>
+            5.Review Your Choices: Before submitting, review your selections to ensure they are accurate.<br>
+            6.Submit Your Vote: Submit your vote electronically through the platform.<br>
+            7.Confirmation of Submission: Receive a confirmation of your vote submission via an on-screen message.<br>
+            8.Ensure Security: Rest assured that the online voting platform incorporates various security measures to protect the integrity and confidentiality of your vote.<br>
+          </p>
+        </div>
+        </div>
+        </div>
+  <div id="contact" class="footer">
+    <div class="container">
+      <div class="row">
+        {% if user.is_authenticated %}
+        <button type="button" name="email-btn" class="btn btn-default middle-blue-background center-block email">
+            <a href="{% url 'votingpolls:index' %}" class="text-center text-uppercase">
+                <i class="fa fa-envelope"></i>Vote Now!
+            </a>
+        </button>
+        {% else %}
+            <button type="button" name="email-btn" class="btn btn-default middle-blue-background center-block email">
+                <a href="{% url 'votinghome:login' %}?next={% url 'votingpolls:index' %}" class="text-center text-uppercase">
+                    <i class="fa fa-envelope"></i>Login to Vote
+                </a>
+            </button>
+        {% endif %}
+        <br />
+      </div>
+    </div>
+  </div>
+  
+      
+
+  <!-- <style>
+    .container {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .description {
+      font-size: 18px;
+      line-height: 1.5;
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .button {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: darkblue;
+    }
+  </style>
+  <div class="container">
+    <p class="description">
+      This is a description of something.
+    </p>
+    <a href="https://www.example.com" class="button">Vote</a>
+  </div> -->
+          
+                 
+</body>
+</html>

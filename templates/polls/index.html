@@ -1,0 +1,83 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls.css' %}">
+{% include "pages/navbar.html" %}
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<h1 class="heading">Vote on Your Favorite candidate
+  <br>
+  {% if user_vote  %}
+    <span class="vote-status1" style="text-align: center;">You have Voted successfully!</span> 
+  {% else %}
+    <span class="vote-status2">You have not voted yet!</span>
+{% endif %}
+</h1>
+
+<!-- Success message container -->
+<section class="hero-section">
+  <div id="success-message" class="success-message" style="display: none;">
+    You have voted successfully!
+  </div>
+  <div class="card-grid">
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://newsd.in/wp-content/uploads/2017/01/fghdcvcaku-1463668880-1479457960.jpg)"></div>
+      <div class="card__content">
+        <h3 class="card__heading">Bharatiya Janata Party (BJP)</h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.thequint.com/thequint/2020-02/1789abfc-53c9-41e2-bef6-20caaf95cef9/11021_pti2_11_2020_000079b.jpg?auto=format%2Ccompress&fmt=webp&w=1200)"></div>
+      <div class="card__content">
+        <h3 class="card__heading">Aam Aadmi Party (AAP) </h3>
+      </div>
+    </a>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://gumlet.assettype.com/nationalherald%2F2018-12%2Fb43c412e-bdf0-4405-81e7-660289ccb414%2Findian_national_congress_turns_134_years_of_age.jpg?rect=0%2C0%2C960%2C504&w=1200&auto=format%2Ccompress&fm=webp&ogImage=true)"></div>
+      <div class="card__content">
+        <h3 class="card__heading">Indian National Congress (INC)</h3>
+      </div>
+    </li>
+    <a class="card" href="#">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)"></div>
+      <div class="card__content">
+        <h3 class="card__heading">Bahujan Samaj Party (BSP)</h3>
+      </div>
+    </a>
+  <div>
+</section>
+<div class="container">
+    <h1 class="heading">Vote Now!</h1>
+    <section class="question-section">
+        <h2>"Which candidate or party do you believe will best address the pressing issues facing our community?"</h1><br>
+        <h3>Note: Users can then select their preferred candidate or party from the list provided.</h3><br>
+        
+        <h1 class="text-center mb-3">Candidates</h1>
+        {% if user_vote  %}
+                <span class="vote-status1">You have already voted!</span>
+        {% else %}
+                <span class="vote-status2">You have not Voted yet!</span>
+        {% endif %}
+        <br>
+        {% if latest_question_list %}
+        <br>
+          <ul>
+            {% for question in latest_question_list %}
+                {% if user_vote and user_vote.question == question %}
+                <li class="voted-question">Voted: {{ question.question_text }}</li>
+                {% else %}
+                <li>
+                  <a class="question {% if user_vote %} not-voted-question {% endif %}" 
+                    {% if not user_vote %}href="{% url 'votingpolls:detail' question.id %}"{% endif %}>
+                    {{ question.question_text }}
+                  </a>
+                </li>
+                  
+                {% endif %}
+            {% endfor %}
+          </ul>
+        {% else %}
+            <p>No polls available</p>
+        {% endif %}
+    </section>
+</div>
+
+
+  

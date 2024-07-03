@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls.css' %}">
+{% include "pages/navbar.html" %}
+<div class="container">
+    <h1 class="heading">Results for All Questions</h1>
+    {% for question in questions %}
+    <section class="results-section">
+        <h2>{{ question.question_text }}</h2>
+        <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }}: {{ choice.votes }} votes</li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endfor %}
+</div>

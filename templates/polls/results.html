@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls.css' %}">
+{% include "pages/navbar.html" %}
+<br>
+<h1 class="mb-5 text-center" style="text-align: center;">{{ question.question_text }}</h1>
+<br>
+<ul class="list-group mb-5" style="text-align: center;">
+    {% for choice in question.choice_set.all %}
+    <li class="list-group-item " style="display:block; font-size: 20px;">
+        {{ choice.choice_text }} <span class="badge badge-success float-right">{{ choice.votes }}
+            vote{{ choice.votes | pluralize }}</span>
+    </li>
+    {% endfor %}
+</ul>
+<br>
+<br>
+<div style="text-align: center; text-decoration: none;">
+    <a class="results-button" href="{% url 'votingpolls:detail' question.id %}">Vote Again?</a>
+</div>

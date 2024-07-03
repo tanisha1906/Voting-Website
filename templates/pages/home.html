@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+<h2>VoteMinder</h2>
+<div class="container {% if signup_active %}right-panel-active{% endif %}" id="container">
+	<div class="form-container sign-up-container">
+		<form id="form" method="POST" action="{% url 'votinghome:signup' %}">
+			{% csrf_token %}
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="https://www.facebook.com/login.php/" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" name="name" placeholder="Name" />
+			<input type="email" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
+			<button type="submit">Sign Up</button>
+			{% if messages %}
+                <div>
+                    {% for message in messages %}
+						<div class="alert {% if message.tags == 'error' %}alert-error{% else %}alert-success{% endif %}">
+							{{ message }}
+						</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form id="form" method="POST" action="{% url 'votinghome:login' %}">
+			{% csrf_token %}
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" name="email" placeholder="Email" />
+			<input type="password" name="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button type="submit">Sign In</button>
+			{% if messages %}
+                <div>
+                    {% for message in messages %}
+						<div class="alert {% if message.tags == 'error' %}alert-error{% else %}alert-success{% endif %}">
+							{{ message }}
+						</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn"><a href="{% url 'votinghome:login' %}" class="ghost-1">Sign In</a></button>
+				
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp"><a href="{% url 'votinghome:signup' %}" class="ghost-1">Sign Up</a></button>
+			</div>
+		</div>
+	</div>
+</div>
+  
+<script>
+   const signUpButton = document.getElementById('signUp');
+   const signInButton = document.getElementById('signIn');
+   const container = document.getElementById('container');
+
+   	signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");	
+	window.location.href = "{% url 'votinghome:signup' %}";
+	});
+
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+		window.location.href = "{% url 'votinghome:login' %}";
+	});
+	document.getElementById('signup-form').addEventListener('submit', function(event) {
+		const name = document.getElementById('signup-name').value;
+		const email = document.getElementById('signup-email').value;
+		const password = document.getElementById('signup-password').value;
+
+    if (!name || !email || !password) {
+        event.preventDefault();
+        <div class = "please">
+			alert('Please fill in all fields.');
+		</div>
+    }
+});
+</script>
+</body>
+</html>
