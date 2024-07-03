@@ -16,12 +16,7 @@
 		<form id="form" method="POST" action="{% url 'votinghome:signup' %}">
 			{% csrf_token %}
 			<h1>Create Account</h1>
-			<div class="social-container">
-				<a href="https://www.facebook.com/login.php/" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your email for registration</span>
+			<span>Register Now!</span>
 			<input type="text" name="name" placeholder="Name" />
 			<input type="email" name="email" placeholder="Email" />
 			<input type="password" name="password" placeholder="Password" />
@@ -41,12 +36,7 @@
 		<form id="form" method="POST" action="{% url 'votinghome:login' %}">
 			{% csrf_token %}
 			<h1>Sign in</h1>
-			<div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div>
-			<span>or use your account</span>
+			<span>Login</span>
 			<input type="email" name="email" placeholder="Email" />
 			<input type="password" name="password" placeholder="Password" />
 			<a href="#">Forgot your password?</a>
